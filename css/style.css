@@ -83,9 +83,11 @@ section{
     font-size: 2.3rem;
 }
 .logo img {
-    width: 40%;
-    height: auto; /* mantiene la proporción */
+    width: 20vw;  /* 20% del ancho de la ventana (viewport) */
+    height: auto;  /* mantiene proporción */
+    max-width: 150px; /* opcional: limita tamaño máximo */
 }
+
 
 .header .logo i{
     padding-left: .5rem;
