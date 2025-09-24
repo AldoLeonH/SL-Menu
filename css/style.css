@@ -550,3 +550,15 @@ section{
     }
 
 }
+.small-img {
+  width: 20vw !important;       /* 20% del ancho de la pantalla, forzado */
+  height: auto !important;      /* mantiene proporción */
+  display: block !important;    /* necesario para centrar */
+  margin: 0 auto !important;    /* centra horizontalmente */
+}
+.linea-separadora {
+  border: none;          /* quitar borde por defecto */
+  height: 1vw;           /* grosor de la línea */
+  background-color: #dcdcdc; /* color negro */
+  margin: 20px 0;        /* espacio arriba y abajo */
+}

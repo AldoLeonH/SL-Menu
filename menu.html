@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Menú Saint Latte</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
+
+  <style>
+    :root{
+      --bg:#0f0f10;
+      --btn:#ffffff;
+      --btn-home:#ffdd57;
+    }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      font-family: Arial, sans-serif;
+    }
+
+    /* Contenedor principal vertical */
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: space-between; /* imagen arriba, botón abajo */
+      align-items: center;
+      padding: 10px 0;
+      box-sizing: border-box;
+    }
+
+    /* Swiper ocupa el 85% de la altura */
+    .swiper {
+      width: 100%;
+      height: 85%;
+    }
+    .swiper-slide {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: var(--bg);
+    }
+    .swiper-slide img {
+      max-width: 95%;
+      max-height: 100%;
+      object-fit: contain;
+      display:block;
+    }
+
+    /* Botón Home */
+    #btnHome {
+      width: 30%;
+      padding: 15px;
+      font-size: 20px;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      background: #000;
+      box-shadow: 0px 4px 8px #000000;
+      margin-bottom: 10px; /* espacio inferior */
+    }
+
+    /* Botones Swiper */
+    .swiper-button-next, .swiper-button-prev{
+      color: var(--btn);
+      width:44px;
+      height:44px;
+      border-radius:8px;
+      background: rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(2px);
+    }
+    .swiper-pagination-bullet{ background: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="image/menu1.png" alt="Menú página 1"></div>
+        <div class="swiper-slide"><img src="image/menu2.png" alt="Menú página 2"></div>
+        <div class="swiper-slide"><img src="image/menu3.png" alt="Menú página 3"></div>
+      </div>
+
+      <!-- navegación (botones) -->
+      <div class="swiper-button-next" aria-label="Siguiente"></div>
+      <div class="swiper-button-prev" aria-label="Anterior"></div>
+
+      <!-- paginación -->
+      <div class="swiper-pagination" aria-hidden="false"></div>
+    </div>
+
+    <!-- Botón Home debajo del Swiper -->
+    <button id="btnHome" onclick="window.location.href='index.html'">Home</button>
+
+  </div>
+
+  <!-- sonido de página -->
+  <audio id="pageSound" src="https://www.soundjay.com/pages/sounds/page-flip-4.mp3" preload="auto"></audio>
+
+  <!-- Swiper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      effect: 'flip',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: false,
+      speed: 1500, // animación lenta
+      keyboard: { enabled: true },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      flipEffect: {
+        slideShadows: true,
+        limitRotation: true,
+      },
+      on: {
+        slideChange: () => {
+          const s = document.getElementById('pageSound');
+          if(s){
+            s.currentTime = 0;
+            s.play().catch(()=>{});
+          }
+        }
+      }
+    });
+
+    // Función Home
+    function goHome(){
+      swiper.slideTo(0, 800);
+    }
+  </script>
+</body>
+</html>

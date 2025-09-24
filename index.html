@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Saint Latte</title>
+    <title>Saint Latte</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
@@ -28,7 +28,7 @@
     <nav class="navbar">
         <a href="#home">inicio</a>
         <a href="#about">nosotros</a>
-        <a href="#menu">menú</a>
+        <a href="/menu.html">menú</a>
         <a href="#review">reseñas</a>
         <a href="#book">reservaciones</a>
     </nav>
@@ -195,8 +195,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p>¡El mejor café de la ciudad! El sabor y la atención son incomparables.</p>
-                <h3>Enrique Cedillo</h3>
+                <p>El mejor cafe y por supuesto la mejor repostería, con un servicio de 10.</p>
+                <h3>Julio Adrián Pineda</h3>
                 <span>cliente satisfecho</span>
             </div>
 
@@ -211,9 +211,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p>Ambiente agradable y café delicioso, perfecto para trabajar o relajarse.</p>
-                <h3>Alejandra Méndez</h3>
-                <span>cliente satisfecha</span>
+                <p>El mejor café y panadería acompañado de la calidez del personal</p>
+                <h3>Alex Ledesma</h3>
+                <span>cliente satisfecho</span>
             </div>
 
             <div class="swiper-slide box">
@@ -227,8 +227,8 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p>El cold brew es espectacular, muy suave, refrescante y lleno de energía.</p>
-                <h3>Max Grabois</h3>
+                <p>Es el mejor café, lo amo ❤️</p>
+                <h3>Andrea Cardenas</h3>
                 <span>cliente satisfecho</span>
             </div>
 
@@ -288,7 +288,7 @@ document.getElementById("cotizacionForm").addEventListener("submit", function(e)
     let numero = "524645796026";
 
     // Construir el mensaje
-    let mensaje = `Hola, soy ${nombre}. Quisiera solicitar una cotización para una ${tipoCelebracion} con un aforo de ${aforo} personas. Peticiones especiales: ${peticiones}`;
+    let mensaje = `Hola, soy ${nombre}. Quisiera solicitar una cotización para ${tipoCelebracion} con un aforo de ${aforo} personas. Lugar y Peticiones especiales: ${peticiones}`;
 
     // Construir el link de WhatsApp
     let link = `https://wa.me/${numero}?text=${mensaje}`;
@@ -299,8 +299,44 @@ document.getElementById("cotizacionForm").addEventListener("submit", function(e)
 </script>
 
 </section>
+<section class="about" id="about">
 
+    <h1 class="heading"> AGOSTO <span>latte del mes</span> </h1>    
+    <div class="row">
+        <div class="image">
+            <img src="image/pumkin.jpg" alt="Calabaza" class="small-img">
+        </div>
+    </div>
+        
+    <div class="row">
+      
+        <div class="content">
+            <h3 class="title">¡PumkinSpice ha vuelto!</h3>
+            <p>El inigualable sabor del la calabaza ha llegado a nuestra barra, pidelo en la presentacion que gustes, caliente, helado o Frappeado.</p>
+            <div class="icons-container">
+                <div class="icons">
+                    <h3>HOT</h3>
+                    <p>Ideal para darle calidez al alma</p>
+                </div>
+                <div class="icons">
+                    <h3>ICED</h3>
+                    <p>La opcion perfecta para estas tardes calurosas</p>
+                </div>
+                <div class="icons">
+                    <h3>FROZEN</h3>
+                    <p>Cuando un par de hielos no bastan, el frappe es la solución</p>
+                </div>
+            </div>
+        
+
+
+        </div>
+
+    </div>
+
+</section>
 <!-- sección footer -->
+<hr class="linea-separadora">
 
 <section class="footer">
 
