@@ -4,7 +4,7 @@ body {
   color:#2e3d2f; /* Verde oscuro */
   font-family:sans-serif;
   font-weight: bold; /* Todo el texto en negrita */
-  background-image:url('images/start_otter.png');
+  background-image:url('image/start_otter.png');
   background-attachment:fixed;
   background-repeat:no-repeat;
   background-position:center;
@@ -74,7 +74,7 @@ main {
   text-align:center;
   font-size:24px;
   margin:1rem 0;
-  color:#4f7951;
+  color:#ffffff;
 }
 .menu-item {
   background:#f5f1e6;
