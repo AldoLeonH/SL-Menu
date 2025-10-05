@@ -1,26 +1,38 @@
 /* ======== ESTILO GENERAL ======== */
 body {
   margin: 0;
-  background-color: #000; /* Fondo base negro */
-  color: #f5f1e6; /* Beige claro para contraste */
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  background-image: url('image/start_otter.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  background-attachment: fixed;
+  color: #f5f1e6;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+  background-color: #000; /* respaldo si no carga la imagen */
 }
 
-/* Efecto sutil de degradado sobre el fondo */
+/* ======== FONDO FIJO DEL MENÚ ======== */
 body::before {
   content: "";
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('image/bkg.jpg'); /* fondo del menú */
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: 50vw; /* ocupa toda la pantalla */
+  z-index: -2; /* detrás de todo el contenido */
+}
+
+/* Degradado opcional encima del fondo para contraste */
+body::after {
+  content: "";
+  position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
-  z-index: 0;
+  background: rgba(0,0,0,0.3); /* ajusta opacidad si quieres más contraste */
+  z-index: -1;
 }
 
 /* ======== ANIMACIÓN DE BIENVENIDA ======== */
@@ -49,10 +61,10 @@ body::before {
 }
 
 .welcome-overlay img {
-  position: absolute;
-  width: 25vw;
+  position: fixed; /* la nutria se queda encima */
   top: 50%;
   left: 50%;
+  width: 25vw;
   transform: translate(-50%, -50%) scale(1);
   opacity: 0.3;
   z-index: 1;
@@ -105,9 +117,9 @@ main {
 .menu-section h2 {
   text-align: center;
   font-size: 1.8rem;
-  color: #a9c4a3;
+  color: #000000;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #a9c4a3;
+  border-bottom: 2px solid #000000;
   padding-bottom: 0.5rem;
 }
 
@@ -163,12 +175,13 @@ main {
 }
 
 /* ======== RESPONSIVE ======== */
-@media (max-width: 768px) {
-  body {
-    background-size: 80%;
-    background-attachment: scroll;
+@media (max-width: 1024px) { /* tablets y móviles grandes */
+  body::before {
+    background-size: cover; /* ajusta la imagen al tamaño de pantalla */
   }
+}
 
+@media (max-width: 768px) { /* móviles pequeños */
   .welcome-text {
     font-size: 2rem;
   }
